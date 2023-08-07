@@ -11,10 +11,26 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from lemonades device
 $(call inherit-product, device/oneplus/lemonades/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common aosp stuff
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_lemonades
+#PixelStar Flags
+TARGET_INCLUDE_WIFI_EXT := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_QUICK_TAP  := true
+
+#Skip Aperture Camera
+PRODUCT_NO_CAMERA := true
+
+# PixelStar Maintainer Flags
+PIXELSTAR_MAINTAINER := TANUJ_D
+CUSTOM_BUILD_TYPE := Personal
+
+#Bootanimation
+TARGET_BOOT_ANIMATION_RES := 1080
+
+PRODUCT_NAME := aosp_lemonades
 PRODUCT_DEVICE := lemonades
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
